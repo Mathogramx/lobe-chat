@@ -34,17 +34,7 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
       {...rest}
     >
       <span>Powered by</span>
-      {isCustomORG ? (
-        <span>{ORG_NAME}</span>
-      ) : (
-        <Link
-          className={styles.logoLink}
-          href={`https://lobehub.com?utm_source=${UTM_SOURCE}&utm_content=brand_watermark`}
-          target={'_blank'}
-        >
-          <LobeHub size={20} type={'text'} />
-        </Link>
-      )}
+      <span>{ORG_NAME}</span>
     </Flexbox>
   );
 });
