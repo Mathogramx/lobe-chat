@@ -55,7 +55,6 @@ const Nav = memo<NavProps>(
       toolsCount,
       resourcesCount,
       promptsCount,
-      github,
       identifier,
     } = useDetailContext();
     const { styles } = useStyles();
