@@ -1,17 +1,11 @@
 'use client';
 
-import { LobeHub } from '@lobehub/ui/brand';
-import { createStyles } from 'antd-style';
-import Link from 'next/link';
 import { memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
 import { ORG_NAME } from '@/const/branding';
-import { UTM_SOURCE } from '@/const/url';
-import { isCustomORG } from '@/const/version';
 
 const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest }) => {
-  const { theme } = createStyles(({ token }) => ({}))();
   return (
     <Flexbox
       align={'center'}
@@ -19,7 +13,7 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
       flex={'none'}
       gap={4}
       horizontal
-      style={{ color: theme.colorTextDescription, fontSize: 12, ...style }}
+      style={{ fontSize: 12, ...style }}
       {...rest}
     >
       <span>Powered by</span>
