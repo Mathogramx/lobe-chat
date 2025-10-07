@@ -12,23 +12,11 @@ import pkg from '../../package.json';
 
 const LAST_MODIFIED = new Date().toISOString();
 export const AUTHOR_LIST = {
-  arvinxx: {
-    avatar: 'https://avatars.githubusercontent.com/u/28616219?v=4',
-    desc: 'Founder, Design Engineer',
-    name: 'Arvin Xu',
-    url: 'https://github.com/arvinxx',
-  },
-  canisminor: {
-    avatar: 'https://avatars.githubusercontent.com/u/17870709?v=4',
-    desc: 'Founder, Design Engineer',
-    name: 'CanisMinor',
-    url: 'https://github.com/canisminor1990',
-  },
-  lobehub: {
-    avatar: 'https://avatars.githubusercontent.com/u/131470832?v=4',
+  imoogle: {
+    avatar: '/icon-512x512.png',
     desc: 'Official Account',
-    name: 'LobeHub',
-    url: 'https://github.com/lobehub',
+    name: 'Imoogle',
+    url: 'https://imoogleai.xyz',
   },
 };
 
@@ -87,16 +75,16 @@ export class Ld {
     return {
       '@id': this.getId(OFFICIAL_URL, '#organization'),
       '@type': 'Organization',
-      'alternateName': 'LobeChat',
+      'alternateName': 'ImoogleAI',
       'contactPoint': {
         '@type': 'ContactPoint',
         'contactType': 'customer support',
         'email': BRANDING_EMAIL.support,
       },
       'description':
-        'We are a group of e/acc design-engineers, hoping to provide modern design components and tools for AIGC, and creating a technology-driven forum, fostering knowledge interaction and the exchange of ideas that may culminate in mutual inspiration and collaborative innovation.',
+        'ImoogleAI provides modern AI-powered chat solutions and tools, creating an innovative platform for intelligent conversations and collaborative AI interactions.',
       'email': BRANDING_EMAIL.business,
-      'founders': [this.getAuthors(['arvinxx']), this.getAuthors(['canisminor'])],
+      'founders': [this.getAuthors(['imoogle'])],
       'image': urlJoin(OFFICIAL_SITE, '/icon-512x512.png'),
       'logo': {
         '@type': 'ImageObject',
@@ -104,8 +92,8 @@ export class Ld {
         'url': urlJoin(OFFICIAL_SITE, '/icon-512x512.png'),
         'width': 512,
       },
-      'name': 'LobeHub',
-      'sameAs': [SOCIAL_URL.x, SOCIAL_URL.github, SOCIAL_URL.medium, SOCIAL_URL.youtube],
+      'name': 'Imoogle',
+      'sameAs': [],
       'url': OFFICIAL_SITE,
     };
   }
@@ -116,8 +104,8 @@ export class Ld {
       '@type': 'Organization',
     };
     if (!ids || ids.length === 0) return defaultAuthor;
-    if (ids.length === 1 && ids[0] === 'lobehub') return defaultAuthor;
-    const personId = ids.find((id) => id !== 'lobehub');
+    if (ids.length === 1 && ids[0] === 'imoogle') return defaultAuthor;
+    const personId = ids.find((id) => id !== 'imoogle');
     if (!personId) return defaultAuthor;
     const person = (AUTHOR_LIST as any)?.[personId];
     if (!person) return defaultAuthor;
@@ -255,7 +243,7 @@ export class Ld {
         '@id': this.getId(fixedUrl, '#primaryimage'),
       },
       'inLanguage': locale,
-      'keywords': tags?.join(' ') || 'LobeHub LobeChat',
+      'keywords': tags?.join(' ') || 'Imoogle ImoogleAI',
       'mainEntityOfPage': fixedUrl,
       'name': title,
       'publisher': {

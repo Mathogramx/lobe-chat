@@ -169,23 +169,6 @@ const Nav = memo<NavProps>(
         {nav}
         {!inModal && (
           <Flexbox gap={12} horizontal>
-            <Link className={styles.link} href={SOCIAL_URL.discord} target={'_blank'}>
-              {t('mcp.details.nav.needHelp')}
-            </Link>
-            {github?.url && (
-              <>
-                <Link className={styles.link} href={github.url} target={'_blank'}>
-                  {t('mcp.details.nav.viewSourceCode')}
-                </Link>
-                <Link
-                  className={styles.link}
-                  href={urlJoin(github.url, 'issues')}
-                  target={'_blank'}
-                >
-                  {t('mcp.details.nav.reportIssue')}
-                </Link>
-              </>
-            )}
           </Flexbox>
         )}
       </Flexbox>
